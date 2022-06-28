@@ -45,6 +45,9 @@ $mysqli->query ("INSERT INTO usuario (nome, apelido, email, senha, data) VALUES 
     <link href='https://fonts.googleapis.com/css?family=Montserrat' rel="stylesheet" type="text/css">
     <title>Registrar -Social Friends</title>
     <style type="text/css">
+        body{
+        background-image: radial-gradient(circle, #60fbc5, #57f1f3, #93e2ff, #c1d4ec, #cdcdcd);
+        }
         *{
             font-family: 'Montserrat', cursive;
         }
@@ -97,7 +100,7 @@ $mysqli->query ("INSERT INTO usuario (nome, apelido, email, senha, data) VALUES 
          }
          h2{
             text-align: center;
-            margin-top: 30px;
+            margin-top: -20px;
          } 
          h3{
             text-align: center;
@@ -117,7 +120,7 @@ $mysqli->query ("INSERT INTO usuario (nome, apelido, email, senha, data) VALUES 
 
 </head>
 <body>
-        <img src="_img/SocialFriends.png">
+        <img src="imagem/SocialFriends_1.png">
         <h2>Criar Conta</h2>
         <form action="post/novoUsuario.php" method="POST">
             <input type="text" placeholder=" Primeiro Nome" name="nome"><br>

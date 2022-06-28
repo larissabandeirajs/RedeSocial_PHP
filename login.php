@@ -27,8 +27,8 @@
                      $_SESSION['usuario'] = $usuario['id'];
                      $_SESSION['nome'] = $usuario['nome'];
 
-                  
-                     header("Location: arquivos/arquivos.php");
+                     header("Location: upload.php");
+                     
 
                }else{
                   echo "<h3>Falha ao logar! E-mail ou senha incorretos</h3>";
@@ -61,13 +61,16 @@
     <link href='https://fonts.googleapis.com/css?family=Montserrat' rel="stylesheet" type="text/css">
     <title>Social Friends</title>
     <style type="text/css">
+      body{
+         background-image: linear-gradient(to left bottom, #2775eb, #7f93f0, #b2b5f5, #dbd9fa, #ffffff);
+          }
         *{
             font-family: 'Montserrat', cursive;
         }
          img{
             display: block;
             margin: auto;
-            margin-top: 20px;
+            margin-top: 18px;
             width: 200px;
          }
          form {
@@ -97,14 +100,16 @@
             padding: 5px;
             border-radius: 10px;
             background: #CCC;
+            
          }
          input[type="submit"]:hover {
+               
                background-color:#1E90FF;
                cursor:pointer;
          }
          h2{
             text-align: center;
-            margin-top: 30px;
+            margin-top: -20px;
          } 
          h3{
             text-align: center;
@@ -115,12 +120,22 @@
             text-align: center;
             font-size: 50px;
             color: green;
+          }
+         div{   
+         
+                  
+         }
+         a{
+            font-size: 22px;
+            color: mediumblue;
+            margin-top: 15px;
          }
     </style>
 
 </head>
 <body>
-        <img src="_img/SocialFriends.png">
+         <div>
+        <img src="imagem/SocialFriends_1.png">
         <h2>Acessar Conta</h2>
         <form action="" method="POST">
             <input type="email" placeholder="Endereço de Email" name="email"><br>
@@ -130,5 +145,6 @@
         <h3>Ainda não tens conta?
          <a href="registrar.php">Criar uma conta</a>
         </h3>
+        </div>
 </body>
 </html>

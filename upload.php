@@ -1,4 +1,5 @@
 <?php
+include("db.php");
 session_start();
 echo $_SESSION["usuario"];
 
@@ -102,13 +103,16 @@ echo $_SESSION["usuario"];
 
 </head>
 <body>
-         <h1>Bem Vindo </h1>
+         <h1>Bem Vindo(a)</h1>
+         <h2>Carregar Imagem</h2>
 
-        <img src="_img/SocialFriends.png">
-        <form enctype="multipart/form-data" method="POST">
-           <p><label for="">Selecione o arquivo</label></p>
-            <input type="file">
-            <p><button type="submit">Enviar arquivo</button></p>
+         <form action="" method="POST">
+            <label>Nome:</label>
+            <input type="text" name="arquivo" placeholder="Digitar o nome"><br><br>
+            <label>Imagem</label>
+            <input type="file" name="imagem"><br><br>
+            
+            <input name="SendCadImg" type="submit" value="Cadastrar">
         </form>
         
 </body>
