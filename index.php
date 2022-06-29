@@ -3,21 +3,24 @@ include("header.php");
 session_start();
 //echo var_dump($_SESSION);
 
-   //$pubs = $mysqli->query ("SELECT * FROM pubs WHERE idUsuario='". $_SESSION["usuario"] . "' ORDER BY id DESC");
+   //$pubs = $mysqli->query ("SELECT * FROM pubs WHERE idUsuario='". ] . "' ORDER BY id DESC");
    $pubs = $mysqli->query ("SELECT * FROM pubs ORDER BY id desc");
 
 if(isset($_POST['publish'])){
     $idUsuario = $_SESSION["usuario"];
+    $texto = $_POST['texto'];
+    $imagem = $_FILES['file'];
     
     if( $_FILES['file']['error'] > 0){
         $texto =$_POST['texto'];
+         
        // $imagem = $_FILES["imagem"];
         $hoje = date("Y-m-d");
 
             if($texto == ""){
                 echo "<h3>Tens de escreve alguma coisa antes de publicar</h3>";
             }else{                
-                $mysqli->query ("INSERT INTO pubs (idUsuario, texto, data) VALUES ('{$idUsuario}', '{$texto}', '{$hoje}')");
+                $mysqli->query ("INSERT INTO pubs (idUsuario, texto, imagem, data) VALUES ('{$idUsuario}', '{$texto}', '{$imagem}', '{$hoje}')");
                 $data = $mysqli->query or die();
                     if($data){
                         header("Location: ./");
@@ -35,27 +38,32 @@ if(isset($_POST['publish'])){
         $hoje = date("Y-m-d");
                     
         if($texto == ""){
-            echo "<h3>Tens de escreve alguma coisa antes de publicar</h3>";
+            echo "<h3><br>Tens de escreve alguma coisa antes de publicar</h3>";
         }else{
             $mysqli->query ("INSERT INTO pubs (idUsuario, texto, imagem, data) VALUES ('{$idUsuario}', '{$texto}', '{$imagem}', '{$hoje}')");
-          //  $data = $mysqli->query or die();
-           //     if($data){
-                   header("Location: ./");
-            //    }else{
-            //        echo "Alguma coisa não ocorreu bem...Tente novamente";
-            //    }
+          // $data = $mysqli->query or die();
+         ///       if($data){
+              //     header("Location: ./");
+           //   }else{
+                //    echo "Alguma coisa não ocorreu bem...Tente novamente";
+              //  }
            
         }
-        
     }
 }
-
 ?>
-
 <html>
     <header>
     <style type="text/css">
+          h3{
+                font-family: Verdana, Geneva, Tahoma, sans-serif;
+                font-size: 12x;
+                margin-left: 710px;
+                color: red;
+                padding-top: 25;
+            }
         div#publish{
+
             width: 400px;
             height: 180px;
             display: block;
@@ -138,6 +146,7 @@ if(isset($_POST['publish'])){
                 border-bottom-left-radius: 5px;
                 border-bottom-right-radius: 5px;
             }
+          
     </style>
     </header>
 <body>
@@ -171,12 +180,12 @@ if(isset($_POST['publish'])){
 
           if($pub['imagem'] == ""){
             echo '<div class="pub" id="'.$id.'" ">
-            <p><a href="#">'.$nome.'</a> -';$pub["data"].' </p>
+            <p><a href="#">'.$nome.'</a> -'.$pub["data"].' </p>
             <span>'.$pub['texto'].'</span><br>
             </div>';
           }else{
             echo '<div class="pub" id="'.$id.'" ">
-            <p><a href="#">'.$nome.'</a> -';$pub["data"].' </p>
+            <p><a href="#">'.$nome.'</a> -'.$pub["data"].' </p>
             <span>'.$pub['texto'].'</span>
             <img src="upload/'.$pub["imagem"].'">
             </div>';

@@ -1,6 +1,8 @@
 <?php
     include("db.php");
-    
+
+  
+//echo var_dump($_SESSION);
       //$login_cookie = $_COOKIE['login'];
         //if(isset($login_cookie)){
           //  header("Location: login.php");
