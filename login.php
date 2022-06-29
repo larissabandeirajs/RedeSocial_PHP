@@ -1,10 +1,9 @@
 <?php
     include("db.php");
-         
-      if(isset($_POST['email']) || isset($_POST['senha'])){
+    if(isset($_POST['email']) || isset($_POST['senha'])){
 
-         if(strlen($_POST['email']) == 0){
-               echo "<h3>Preencha seu e-mail</h3>";
+      if(strlen($_POST['email']) == 0){
+            echo "<h3>Preencha seu e-mail</h3>";
          }else if (strlen($_POST['senha']) == 0){
                echo "<h3>Preencha sua senha</h3>";
          } else {
@@ -27,7 +26,7 @@
                      $_SESSION['usuario'] = $usuario['id'];
                      $_SESSION['nome'] = $usuario['nome'];
 
-                     header("Location: upload.php");
+                     header("Location: index.php");
                      
 
                }else{
