@@ -22,14 +22,16 @@
             margin: 0;
         }
         body{
-            background: #f6f6f6;
+          /*  background: #f6f6f6;*/
+          background:#F8F8F8;   
         }
         div#topo {
             width: 100%;
             top: 0;
             background: #fff;
-            box-shadow: 0 0  10px #000;
+            box-shadow: 0 0 5px #000;
             height: 110px;
+            background:#ACD2D7;
         }
         div#topo img[name="SocialFriends_1"] {
             float: left;
@@ -65,7 +67,7 @@
 </head>
 <body>
     <div id="topo">
-       <a href="#"><img src="imagem/SocialFriends_1.png" width="100" name="SocialFriends_1"></a>
+       <a href="pub.php"><img src="imagem/SocialFriends_1.png" width="100" name="SocialFriends_1"></a>
         <form method="GET">
         <input type="text" placeholder="Pesquisar" name="query" autocomplete="off"><input type="submit" hidden>
         </form>

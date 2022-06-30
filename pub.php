@@ -20,7 +20,8 @@ if(isset($_POST['publish'])){
             if($texto == ""){
                 echo "<h3>Tens de escreve alguma coisa antes de publicar</h3>";
             }else{                
-                $mysqli->query ("INSERT INTO pubs (idUsuario, texto, imagem, data) VALUES ('{$idUsuario}', '{$texto}', '{$imagem}', '{$hoje}')");
+             //   $mysqli->query ("INSERT INTO pubs (idUsuario, texto, imagem, data) VALUES ('{$idUsuario}', '{$texto}', '{$imagem}', '{$hoje}')");
+             $mysqli->query ("INSERT INTO pubs (idUsuario, texto, imagem, data) VALUES ('{$idUsuario}', '{$texto}', '{$imagem}', '{$hoje}')");
                 $data = $mysqli->query or die();
                     if($data){
                         header("Location: ./");
@@ -146,6 +147,20 @@ if(isset($_POST['publish'])){
                 border-bottom-left-radius: 5px;
                 border-bottom-right-radius: 5px;
             }
+            footer{
+                background: #A7C6DA;
+                clear: both;
+                border-top: 1px solid #606060;
+                padding: 10px;
+                text-align: center;
+                font-size: 10px;
+            }
+
+             h4{
+                font-size: 12x;
+                margin-left: 710px;
+                padding-top: 25;
+            }
           
     </style>
     </header>
@@ -174,18 +189,18 @@ if(isset($_POST['publish'])){
        // echo var_dump($saberr) . "<br>";
      //   $saber = $saberr->fetch_assoc();
       //  echo var_dump($saber) . "<br>";
-        $saber = $saberr->fetch_assoc();
+          $saber = $saberr->fetch_assoc();
           $nome = $saber['nome']." ".$saber['apelido'];
           $id = $pub['id'];
 
           if($pub['imagem'] == ""){
             echo '<div class="pub" id="'.$id.'" ">
-            <p><a href="#">'.$nome.'</a> -'.$pub["data"].' </p>
+            <p><a href="perfil.php?id='.$saber['id'].'">'.$nome.'</a> -'.$pub["data"].' </p>
             <span>'.$pub['texto'].'</span><br>
             </div>';
           }else{
             echo '<div class="pub" id="'.$id.'" ">
-            <p><a href="#">'.$nome.'</a> -'.$pub["data"].' </p>
+            <p><a href="perfil.php?id='.$saber['id'].'">'.$nome.'</a> -'.$pub["data"].' </p>
             <span>'.$pub['texto'].'</span>
             <img src="upload/'.$pub["imagem"].'">
             </div>';
@@ -193,5 +208,10 @@ if(isset($_POST['publish'])){
           }
        }
     ?>
+
+    <footer id="rodape">
+        <h2>Copyright &copy; 2022 - by Larissa Bandeira de Jesus</h2>
+        <h4> Rede Social: Social Friends  </h4>
+    </footer>
 </body>
 </html>

@@ -26,7 +26,7 @@
                      $_SESSION['usuario'] = $usuario['id'];
                      $_SESSION['nome'] = $usuario['nome'];
 
-                     header("Location: index.php");
+                     header("Location: pub.php");
                      
 
                }else{
