@@ -72,7 +72,7 @@
         <input type="text" placeholder="Pesquisar" name="query" autocomplete="off"><input type="submit" hidden>
         </form>
         <a href="#"><img src="imagem/chat.png" width="30" name="menu"></a>
-        <a href="perfil.php"><img src="imagem/perfil.png" width="30" name="menu"></a>
+        <a href="perfil.php?id=18"><img src="imagem/perfil.png" width="30" name="menu"></a>
     </div>
 </body>
 </html>

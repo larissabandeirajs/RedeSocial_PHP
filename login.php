@@ -33,9 +33,9 @@ if($entrar){
          echo "<script>alert('Usuário e/ou senha inválido(s), Tente novamente!');</script>";
       }
    }
-*/
+ */
 
-   
+
 //------------------************************-----------------------------------------
 // ACESSAR O SISTEMA COM O BANCO DE DADOS
 //------------------************************-----------------------------------------

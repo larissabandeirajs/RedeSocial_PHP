@@ -147,21 +147,50 @@ if(isset($_POST['publish'])){
                 border-bottom-left-radius: 5px;
                 border-bottom-right-radius: 5px;
             }
-            footer{
+            div.pub button {
+                padding: 3px;
+                background: #4169E1;
+                color: #FFF;
+            }
+
+           /* footer#rodape{
+               
                 background: #A7C6DA;
                 clear: both;
                 border-top: 1px solid #606060;
-                padding: 10px;
+                padding: 5px;
                 text-align: center;
                 font-size: 10px;
+                width: 100%;
+                height: 100px;    
+                line-height: 100px;
+            }
+            */
+           /* footer#rodape{
+            position: absolute;
+            background-color: #A7C6DA;
+            color: #FFF;
+            width: 100%;
+            height: 100px;    
+            text-align: center;
+            line-height: 50px;  
+            }
+            */
+            footer#rodape{
+            background: #A7C6DA;
+            width: 100%;
+            height: 100px;
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            }
+            footer#rodape h2{
+                font-size: 15px;
+                text-align: center;
+                line-height: 50px;
+                color: #FFF;
             }
 
-             h4{
-                font-size: 12x;
-                margin-left: 710px;
-                padding-top: 25;
-            }
-          
     </style>
     </header>
 <body>
@@ -178,7 +207,9 @@ if(isset($_POST['publish'])){
 
     </form>
     </div>
-
+           <!-- <div id="curtidas">
+             <button type="button" onclick="like()" id="contar">curtir</button>
+            </div>  -->
     <?php
     while($pub=mysqli_fetch_assoc($pubs)) {
         
@@ -203,15 +234,32 @@ if(isset($_POST['publish'])){
             <p><a href="perfil.php?id='.$saber['id'].'">'.$nome.'</a> -'.$pub["data"].' </p>
             <span>'.$pub['texto'].'</span>
             <img src="upload/'.$pub["imagem"].'">
+            <button type="button" onclick="like()" id="contar">curtir</button><br>
             </div>';
            
           }
        }
     ?>
+    <script type="text/javascript">
+        let contador = 0;
+       const like = () => {
+           let curtidas = document.getElementById('contar');
+           contador =  contador + 1
+           curtidas.innerHTML = `<h2>Curtidas: ${contador} </h2>`;    
+       }
 
+       /*
+       const reset = () => {
+           let trocar = document.getElementById('contar');
+            contador = 0;
+            trocar.innerHTML =`<h1> reset contador </h1>`;
+       }
+       */
+
+    </script>
     <footer id="rodape">
+        <h2> Rede Social: Social Friends </h2>
         <h2>Copyright &copy; 2022 - by Larissa Bandeira de Jesus</h2>
-        <h4> Rede Social: Social Friends  </h4>
     </footer>
 </body>
 </html>
