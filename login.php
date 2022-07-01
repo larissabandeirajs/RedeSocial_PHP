@@ -1,5 +1,7 @@
 
 <?php
+
+
 /*
     //------------------***********************-----------------------------------------
    // ACESSAR O SISTEMA SEM BANCO DE DADOS
@@ -75,22 +77,6 @@ if($entrar){
          }
 
       }
-
-
-      //if(isset($_POST['entrar'])){
-        // $email = $_POST['email'];
-        // $pass = $_POST['pass'];
-         //$verifica = mysqli_query($mysqli, "SELECT * FROM usuario WHERE email = '$email' AND  password= '$pass'");
-
-         //   if(mysqli_num_rows ($verifica) <=0){
-           //    echo "<h3>Palavra-Passa ou e-mail incorreto</h3>";
-            //}else{
-             //  setcookie("login", $email);
-              // header("location: ./");
-            //}
-      //}
-       
- 
 ?>
 
 <!DOCTYPE html>

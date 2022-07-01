@@ -9,8 +9,8 @@ session_start();
 if(isset($_POST['publish'])){
     $idUsuario = $_SESSION["usuario"];
     $texto = $_POST['texto'];
-    $imagem = $_FILES['file'];
-    
+    $imagem = $_FILES['file']["name"];
+ 
     if( $_FILES['file']['error'] > 0){
         $texto =$_POST['texto'];
          
@@ -19,15 +19,15 @@ if(isset($_POST['publish'])){
 
             if($texto == ""){
                 echo "<h3>Tens de escreve alguma coisa antes de publicar</h3>";
-            }else{                
+            }else{                                   
              //   $mysqli->query ("INSERT INTO pubs (idUsuario, texto, imagem, data) VALUES ('{$idUsuario}', '{$texto}', '{$imagem}', '{$hoje}')");
-             $mysqli->query ("INSERT INTO pubs (idUsuario, texto, imagem, data) VALUES ('{$idUsuario}', '{$texto}', '{$imagem}', '{$hoje}')");
-                $data = $mysqli->query or die();
-                    if($data){
-                        header("Location: ./");
-                    }else{
-                        echo "Alguma coisa não ocorreu bem...Tente novamente";
-                    }
+                $result = $mysqli->query("INSERT INTO pubs (idUsuario, texto, imagem, data) VALUES ('{$idUsuario}', '{$texto}', '{$imagem}', '{$hoje}')");                
+                if($result){
+                    //header("Location: /RedeSocial_PHP/pub.php");
+                }else{
+                    echo "Alguma coisa não ocorreu bem...Tente novamente";
+                    die();
+                }
             }
      }else{
         $n = rand(0,1000000);
@@ -228,13 +228,14 @@ if(isset($_POST['publish'])){
             echo '<div class="pub" id="'.$id.'" ">
             <p><a href="perfil.php?id='.$saber['id'].'">'.$nome.'</a> -'.$pub["data"].' </p>
             <span>'.$pub['texto'].'</span><br>
+            <button type="button" onclick="like_txt()" id="contartxt">Curtir</button>
             </div>';
           }else{
             echo '<div class="pub" id="'.$id.'" ">
             <p><a href="perfil.php?id='.$saber['id'].'">'.$nome.'</a> -'.$pub["data"].' </p>
             <span>'.$pub['texto'].'</span>
             <img src="upload/'.$pub["imagem"].'">
-            <button type="button" onclick="like()" id="contar">curtir</button><br>
+            <button type="button" onclick="like()" id="contar">Curtir</button>
             </div>';
            
           }
@@ -248,13 +249,12 @@ if(isset($_POST['publish'])){
            curtidas.innerHTML = `<h2>Curtidas: ${contador} </h2>`;    
        }
 
-       /*
-       const reset = () => {
-           let trocar = document.getElementById('contar');
-            contador = 0;
-            trocar.innerHTML =`<h1> reset contador </h1>`;
+       let cont = 0;
+       const like_txt = () => {
+           let curtidastxt = document.getElementById('contartxt');
+           cont =  cont + 1
+           curtidastxt.innerHTML = `<h2>Curtidas: ${cont} </h2>`;    
        }
-       */
 
     </script>
     <footer id="rodape">
