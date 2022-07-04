@@ -17,6 +17,7 @@
     <link href='https://fonts.googleapis.com/css?family=Montserrat' rel="stylesheet" type="text/css">
     <title>Page Title</title>
     <style>
+
         *{
             font-family: 'Montserrat', cursive;
             margin: 0;
@@ -24,6 +25,9 @@
         body{
           /*  background: #f6f6f6;*/
           background:#F8F8F8;   
+           
+           
+          
         }
         div#topo {
             width: 100%;
@@ -61,6 +65,17 @@
             margin: auto;
             padding-top: 22px;
         }
+        footer{
+            position: fixed;
+            bottom: 0px;
+            width: 100%;
+            background:#ACD2D7;
+        }
+         footer p{
+            text-align: center;
+            color: white;
+            
+        }
     </style>
     
      
@@ -74,5 +89,9 @@
         <a href="#"><img src="imagem/chat.png" width="30" name="menu"></a>
         <a href="perfil.php?id=18"><img src="imagem/perfil.png" width="30" name="menu"></a>
     </div>
+    <footer>
+        <p> Rede Social: Social Friends </p>
+        <p>Copyright &copy; 2022 - by Larissa Bandeira de Jesus</p>
+    </footer>
 </body>
-</html>
+</html> 
