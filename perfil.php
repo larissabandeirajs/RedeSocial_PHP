@@ -54,16 +54,19 @@ session_start();
             echo '<div class="pub" id="'.$id.'" ">
             <p><a href="perfil.php?id='.$saber['id'].'">'.$nome.'</a> -'.$pub["data"].' </p>
             <span>'.$pub['texto'].'</span><br>
+            <button type="button" onclick="like_txt()" id="contartxt">Curtir</button>
             </div>';
           }else{
             echo '<div class="pub" id="'.$id.'" ">
             <p><a href="perfil.php?id='.$saber['id'].'">'.$nome.'</a> -'.$pub["data"].' </p>
             <span>'.$pub['texto'].'</span>
             <img src="upload/'.$pub["imagem"].'">
+            <button type="button" onclick="like()" id="contar">Curtir</button>
             </div>';
            
           }
        }
     ?>
+      <script type="text/javascript" src="javascript/perfil.js"></script>
 </body>
 </html>

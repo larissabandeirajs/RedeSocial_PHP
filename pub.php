@@ -106,22 +106,7 @@ if(isset($_POST['publish'])){
           }
        }
     ?>
-    <script type="text/javascript">
-        let contador = 0;
-       const like = () => {
-           let curtidas = document.getElementById('contar');
-           contador =  contador + 1
-           curtidas.innerHTML = `<h2>Curtidas: ${contador} </h2>`;    
-       }
-
-       let cont = 0;
-       const like_txt = () => {
-           let curtidastxt = document.getElementById('contartxt');
-           cont =  cont + 1
-           curtidastxt.innerHTML = `<h2>Curtidas: ${cont} </h2>`;    
-       }
-
-    </script>
+    <script type="text/javascript" src="javascript/pub.js"></script>
     <footer id="rodape">
         <h2> Rede Social: Social Friends </h2>
         <h2>Copyright &copy; 2022 - by Larissa Bandeira de Jesus</h2>

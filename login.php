@@ -56,10 +56,14 @@ if(isset($_POST['email']) || isset($_POST['senha'])){
             <input type="password"  placeholder="Palavra-Passe" name="senha"><br>
             <input type="submit" value="Entrar" name="entrar">
         </form>
-        <h3>Ainda não tens conta?
-         <a href="registrar.php">Criar uma conta</a>
+        <h3>Ainda não tem conta?
+         <a href="registrar.php">Cadastre-se</a>
         </h3>
         </div>
+      
+   <?php
+   
+?>
         <script type="text/javacript" src="./js/js.js"></script>
 </body>
 </html>

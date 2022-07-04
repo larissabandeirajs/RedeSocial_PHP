@@ -9,6 +9,7 @@ if(isset($_POST["criar"])) {
     $email = $_POST['email'];
     $senha = $_POST['senha'];
     $data = date("Y-m-d");
+   
 
   //consulta mysql  
 $mysqli->query ("INSERT INTO usuario (nome, apelido, email, senha, data) VALUES ('{$nome}','{$apelido}','{$email}','{$senha}','{$data}')");  

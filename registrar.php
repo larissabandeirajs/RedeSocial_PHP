@@ -16,7 +16,7 @@
 </head>
 <body>
         <img src="imagem/SocialFriends_1.png">
-        <h2>Criar Conta</h2>
+        <h2>Registre-se</h2>
         <form action="post/novoUsuario.php" method="POST">
             <input type="text" placeholder=" Primeiro Nome" name="nome"><br>
             <input type="text" placeholder="Apelido" name="apelido"><br>
@@ -24,8 +24,8 @@
             <input type="password" placeholder="Palavra-Passe" name="senha"><br>
             <input type="submit" value="Criar uma conta" name="criar">
         </form>
-        <h3>Já não tens conta?
-         <a href="login.php">Entrar aqui!</a>
+        <h3>Já tem cadastro ?
+         <a href="login.php">Entre aqui!</a>
         </h3>
 </body>
 </html>

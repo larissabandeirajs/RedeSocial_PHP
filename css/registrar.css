@@ -1,6 +1,8 @@
 body{
-    background-image: radial-gradient(circle, #60fbc5, #57f1f3, #93e2ff, #c1d4ec, #cdcdcd);
+   background-image: radial-gradient(circle, #60fbc5, #57f1f3, #93e2ff, #c1d4ec, #cdcdcd);
+
     }
+
     *{
         font-family: 'Montserrat', cursive;
     }
@@ -17,44 +19,62 @@ body{
      input[type="text"]{
         border: 1px, solid #CCC;
         width: 250px;
-        height: 25px;
+        height: 30px;
         padding-left: 10px;
         border-radius: 10px;
         margin-top: 10px;
      }
+     input[type="text"]:hover{
+      background-color:#cecece;
+      cursor: text;
+     }
+
      input[type="email"]{
         border: 1px, solid #CCC;
         width: 250px;
-        height: 25px;
+        height: 30px;
         padding-left: 10px;
         border-radius: 10px;
         margin-top: 10px;
      }
+     input[type="email"]:hover{
+      background-color:#cecece;
+      cursor: text;
+    }
      input[type="password"]{
         border: 1px, solid #CCC;
         width: 250px;
-        height: 25px;
+        height: 30px;
         padding-left: 10px;
         margin-top: 10px;
         border-radius: 10px;
      }
+     input[type="password"]:hover{
+      background-color:#cecece;
+      cursor: text;
+     }
      input[type="submit"]{
         border: none;
-        width: 125px;
-        height: 25px;
+        width: 135px;
+        height: 40px;
         margin-top: 20px;
         padding: 5px;
         border-radius: 10px;
         background: #CCC;
+        border-bottom-right-radius: 20px;
+    border-top-left-radius: 20px;
      }
      input[type="submit"]:hover {
            background-color:#1E90FF;
            cursor:pointer;
      }
      h2{
-        text-align: center;
-        margin-top: -20px;
-     } 
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      font-size: 30px;
+       text-align: center;
+       margin-top: -29px;
+    } 
+     
      h3{
         text-align: center;
         color: red;

@@ -1,5 +1,5 @@
 body{
-  background-image: radial-gradient(circle, #00ff2c, #00ec64, #00d881, #00c392, #1eac96, #3bab9b, #51a99f, #63a7a2, #64bbb5, #64d0c9, #62e5dd, #5ffbf1);
+   background-image: radial-gradient(circle at 50.7% 57.95%, #b2f819 0, #94f724 16.67%, #71f530 33.33%, #3cf23c 50%, #00ef49 66.67%, #00eb57 83.33%, #00e866 100%);
      }
    *{
        font-family: 'Montserrat', cursive;
