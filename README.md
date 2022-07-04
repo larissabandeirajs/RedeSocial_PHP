@@ -1,10 +1,7 @@
 # Social Friends
 
-## Pequeno site de rede social para compartilhameto de fotos
+## Pequeno site de rede social para compartilhameto de fotos, textos onde voce pode curtir estes posts
 
-> Site com validação de login..Execute o scrite para utilizar
+> Site com validação de login..Execute o script para utilizar
 
-```
-login: teste@teste.com
-senha:teste
-```
+ 
